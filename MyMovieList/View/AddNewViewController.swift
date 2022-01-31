@@ -11,6 +11,7 @@ final class AddNewViewController: UIViewController {
     // MARK: Private
 
     private let imageView = UIView()
+//    ff
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private var avatarImageView = UIImageView()
