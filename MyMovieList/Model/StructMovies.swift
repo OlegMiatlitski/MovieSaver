@@ -5,6 +5,6 @@ struct Movies {
     var movieRating: String
     var releaseDate: String
     var youtubeLink: String
-    var imageMovie: UIImageView
+    var imageMovie: UIImage
     var description: String
 }

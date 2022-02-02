@@ -14,4 +14,3 @@ extension UIFont {
         return UIFont(name: weight.rawValue, size: size)!
     }
 }
-
