@@ -3,6 +3,9 @@ import UIKit
 final class ReleasingDateViewController: UIViewController {
 
     // MARK: - Properties
+
+    weak var delegateDate: TransferDataBetweenVCDelegats?
+
     // MARK: Public
     // MARK: Private
 
@@ -10,7 +13,6 @@ final class ReleasingDateViewController: UIViewController {
     private let releasingDateLabel = UILabel()
     private let datePicker = UIDatePicker()
     private let saveRealisingDateButton = UIButton()
-    weak var delegateDate: TransferDataBetweenVCDelegats?
 
     // MARK: - Lifecycle
 
@@ -57,7 +59,7 @@ final class ReleasingDateViewController: UIViewController {
         view.backgroundColor = AppColor.viewControllerBackgroundColor
 
         releasingDateLabel.backgroundColor = .clear
-        releasingDateLabel.textColor = .black
+        releasingDateLabel.textColor = AppColor.textColor
         releasingDateLabel.textAlignment = .center
         releasingDateLabel.text = "Release date"
         releasingDateLabel.font =  .manrope(ofSize: 24, weight: .medium)

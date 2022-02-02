@@ -3,6 +3,9 @@ import UIKit
 final class YourRatingViewController: UIViewController, UIPickerViewDelegate {
 
     // MARK: - Properties
+
+    weak var delegateRating: TransferDataBetweenVCDelegats?
+
     // MARK: Public
     // MARK: Private
 
@@ -11,7 +14,6 @@ final class YourRatingViewController: UIViewController, UIPickerViewDelegate {
     private let saveRatingButton = UIButton()
     private var selectedRating: String = "10.0"
     private var arrayOfMarks: [Double] = []
-    weak var delegateRating: TransferDataBetweenVCDelegats?
 
     // MARK: - Lifecycle
 
@@ -43,7 +45,7 @@ final class YourRatingViewController: UIViewController, UIPickerViewDelegate {
         yourRatingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 88).isActive = true
         yourRatingLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -88).isActive = true
 
-        yourRatingLabel.heightAnchor.constraint(equalToConstant: 26).isActive = true
+        yourRatingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
         ratingPickerView.translatesAutoresizingMaskIntoConstraints = false
         ratingPickerView.topAnchor.constraint(equalTo: yourRatingLabel.bottomAnchor, constant: 32).isActive = true
@@ -63,7 +65,7 @@ final class YourRatingViewController: UIViewController, UIPickerViewDelegate {
         view.backgroundColor = AppColor.viewControllerBackgroundColor
 
         yourRatingLabel.backgroundColor = .clear
-        yourRatingLabel.textColor = .black
+        yourRatingLabel.textColor = AppColor.textColor
         yourRatingLabel.textAlignment = .center
         yourRatingLabel.text = "Your Rating"
         yourRatingLabel.font =  .manrope(ofSize: 24, weight: .medium)

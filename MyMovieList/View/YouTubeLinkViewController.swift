@@ -3,13 +3,15 @@ import UIKit
 final class YouTubeLinkViewController: UIViewController {
 
     // MARK: - Properties
+
+    weak var delegateLink: TransferDataBetweenVCDelegats?
+
     // MARK: Public
     // MARK: Private
 
     private let youTubeLinkLabel = UILabel()
     private let linkTextField = UITextField()
     private let saveLinkButton = UIButton()
-    weak var delegateLink: TransferDataBetweenVCDelegats?
 
     // MARK: - Lifecycle
 
@@ -54,7 +56,7 @@ final class YouTubeLinkViewController: UIViewController {
         view.backgroundColor = AppColor.viewControllerBackgroundColor
 
         youTubeLinkLabel.backgroundColor = .clear
-        youTubeLinkLabel.textColor = .black
+        youTubeLinkLabel.textColor = AppColor.textColor
         youTubeLinkLabel.textAlignment = .center
         youTubeLinkLabel.text = "YouTube Link"
         youTubeLinkLabel.font =  .manrope(ofSize: 24, weight: .medium)
