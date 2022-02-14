@@ -21,6 +21,7 @@
 		DC88F7C32785A4760047634B /* ReleasingDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88F7C22785A4760047634B /* ReleasingDateViewController.swift */; };
 		DC88F7C52785ADB00047634B /* YouTubeLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88F7C42785ADB00047634B /* YouTubeLinkViewController.swift */; };
 		DC88F7CB278C04420047634B /* DetailedInfoAboutTheMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC88F7CA278C04420047634B /* DetailedInfoAboutTheMovie.swift */; };
+		DC9F650327B6E8FA00B3A404 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9F650227B6E8FA00B3A404 /* UserDefaultsManager.swift */; };
 		DCE067DB27847BA70067CD0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE067DA27847BA70067CD0E /* AppDelegate.swift */; };
 		DCE067DD27847BA70067CD0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE067DC27847BA70067CD0E /* SceneDelegate.swift */; };
 		DCE067DF27847BA70067CD0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE067DE27847BA70067CD0E /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		DC88F7C22785A4760047634B /* ReleasingDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasingDateViewController.swift; sourceTree = "<group>"; };
 		DC88F7C42785ADB00047634B /* YouTubeLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeLinkViewController.swift; sourceTree = "<group>"; };
 		DC88F7CA278C04420047634B /* DetailedInfoAboutTheMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedInfoAboutTheMovie.swift; sourceTree = "<group>"; };
+		DC9F650227B6E8FA00B3A404 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		DCE067D727847BA70067CD0E /* MyMovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE067DA27847BA70067CD0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCE067DC27847BA70067CD0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				DCE067F4278483920067CD0E /* StructMovies.swift */,
 				DC1A656327915C990005F603 /* ExtensionFontManrope.swift */,
+				DC9F650227B6E8FA00B3A404 /* UserDefaultsManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> /Users/daddyofdota/.zprofile\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "//swiftLint\necho 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> /Users/daddyofdota/.zprofile\neval \"$(/opt/homebrew/bin/brew shellenv)\"\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -267,6 +270,7 @@
 				DC88F7CB278C04420047634B /* DetailedInfoAboutTheMovie.swift in Sources */,
 				DC1A656427915C990005F603 /* ExtensionFontManrope.swift in Sources */,
 				DC88F7B22784C6C40047634B /* TableViewCellMyMovieList.swift in Sources */,
+				DC9F650327B6E8FA00B3A404 /* UserDefaultsManager.swift in Sources */,
 				DC88F7C32785A4760047634B /* ReleasingDateViewController.swift in Sources */,
 				DCE067F5278483920067CD0E /* StructMovies.swift in Sources */,
 				DC88F7C52785ADB00047634B /* YouTubeLinkViewController.swift in Sources */,

@@ -8,13 +8,13 @@ final class TableViewCellMyMovieList: UITableViewCell {
     // MARK: Private
 
     private var movieView = UIView()
-    var movieImage = UIImageView()
-    var movieNameLabel = UILabel()
-    var movieRatingLabel = UILabel()
-    let whiteView = UIView()
-    let releasingDateLabel = UILabel()
-    let descriptionTextLabel = UILabel()
-    let youTubelinkLabel = UILabel()
+    private var movieImage = UIImageView()
+    private var movieNameLabel = UILabel()
+    private var movieRatingLabel = UILabel()
+    private let whiteView = UIView()
+    private let releasingDateLabel = UILabel()
+    private let descriptionTextLabel = UILabel()
+    private let youTubelinkLabel = UILabel()
 
     // MARK: - Lifecycle
 
@@ -27,6 +27,19 @@ final class TableViewCellMyMovieList: UITableViewCell {
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - API
+
+    func set(movie: Movies) {
+
+        movieImage.image = UIImage(data: movie.poster)
+        movieNameLabel.text = movie.movieName
+        movieRatingLabel.text = movie.movieRating
+        releasingDateLabel.text = movie.releaseDate
+        descriptionTextLabel.text = movie.description
+        youTubelinkLabel.text = movie.youtubeLink
+
     }
 
     // MARK: - Setups

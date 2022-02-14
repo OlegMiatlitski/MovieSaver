@@ -35,7 +35,8 @@ final class DetailedInfoAboutTheMovie: UIViewController {
     // MARK: - API
 
     func set(movie: Movies) {
-        movieDetailedImage.image = movie.imageMovie
+
+        movieDetailedImage.image = UIImage(data: movie.poster)
         movieDetailedNameLabel.text = movie.movieName
         detailedRatingAndReleasingDateLabel.attributedText = detailedRatingAndYear(
             movie.movieRating,

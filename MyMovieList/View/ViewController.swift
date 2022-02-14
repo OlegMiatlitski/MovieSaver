@@ -7,10 +7,13 @@ final class ViewController: UIViewController {
     // MARK: Private
 
     private var tableView = UITableView()
-    private var myMovie: [Movies] = []
+    private var myMovie: [Movies] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,11 @@ final class ViewController: UIViewController {
         setupMoviesTableView()
         addConstraints()
         setupUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myMovie = UserDafaultsManager.instance.getWatchedMovie()
     }
 
     // MARK: - Setups
@@ -69,6 +77,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return self.myMovie.count
     }
 
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            UserDafaultsManager.instance.restoreDeletedMovie(deletedMovie:
+                                                                self.myMovie.remove(at: indexPath.row))
+            UserDafaultsManager.instance.updateMovies(updatedMovie:
+                                                        self.myMovie)
+        }
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vcDetailed = storyboard?.instantiateViewController(
             withIdentifier: "DetailedInfoAboutTheMovie"
@@ -84,12 +102,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: "TableViewCellMyMovieList", for: indexPath
         ) as? TableViewCellMyMovieList {
-            cell.movieImage.image = myMovie[indexPath.row].imageMovie
-            cell.movieNameLabel.text = myMovie[indexPath.row].movieName
-            cell.movieRatingLabel.attributedText = ratingMovieInfo(indexPath)
-            cell.releasingDateLabel.text = myMovie[indexPath.row].releaseDate
-            cell.descriptionTextLabel.text = myMovie[indexPath.row].description
-            cell.youTubelinkLabel.text = myMovie[indexPath.row].youtubeLink
+            cell.set(movie: myMovie[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -120,6 +133,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: TransferMovieBetweenVCDelegats {
     func transferMovie(_ movie: Movies) {
         myMovie.insert(movie, at: 0)
-        tableView.reloadData()
     }
 }

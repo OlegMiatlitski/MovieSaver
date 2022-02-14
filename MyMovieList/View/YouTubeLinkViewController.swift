@@ -60,6 +60,8 @@ final class YouTubeLinkViewController: UIViewController {
         youTubeLinkLabel.textAlignment = .center
         youTubeLinkLabel.text = "YouTube Link"
         youTubeLinkLabel.font =  .manrope(ofSize: 24, weight: .medium)
+        youTubeLinkLabel.adjustsFontSizeToFitWidth = true
+        youTubeLinkLabel.minimumScaleFactor = 0.5
 
         linkTextField.layer.cornerRadius = 5
         linkTextField.layer.borderWidth = 0.3

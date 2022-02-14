@@ -228,7 +228,6 @@ final class AddNewViewController: UIViewController {
         view.backgroundColor = AppColor.viewControllerBackgroundColor
         imageView.backgroundColor = .clear
         avatarImageView.image = UIImage(named: "defaultImage")
-
         let heightConstraint = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         heightConstraint.priority = UILayoutPriority(rawValue: 100)
         heightConstraint.isActive = true
@@ -378,16 +377,18 @@ final class AddNewViewController: UIViewController {
             navigationController?.pushViewController(linkVC, animated: true)
         }
     }
+
     @objc func saveMovieAction(sender: UIButton!) {
-        let movieInfo = Movies(
+        let watchedMovie = Movies(
             movieName: nameOfSelectedMovieLabel.text!,
             movieRating: selectedRatingLabel.text!,
             releaseDate: selectedReleasingDateLabel.text!,
             youtubeLink: selectedYoutubeLink.text!,
-            imageMovie: avatarImageView.image!,
-            description: descriptionTextView.text!
-        )
-        delegateMovie?.transferMovie(movieInfo)
+            description: descriptionTextView.text!,
+            poster: (avatarImageView.image?.pngData())!
+            )
+        UserDafaultsManager.instance.saveWatchedMovie(watchedMovie: watchedMovie)
+        delegateMovie?.transferMovie(watchedMovie)
         navigationController?.popViewController(animated: true)
     }
 }

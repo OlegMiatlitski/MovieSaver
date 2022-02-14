@@ -9,7 +9,6 @@ final class ReleasingDateViewController: UIViewController {
     // MARK: Public
     // MARK: Private
 
-    var data: [String] = []
     private let releasingDateLabel = UILabel()
     private let datePicker = UIDatePicker()
     private let saveRealisingDateButton = UIButton()
@@ -63,6 +62,8 @@ final class ReleasingDateViewController: UIViewController {
         releasingDateLabel.textAlignment = .center
         releasingDateLabel.text = "Release date"
         releasingDateLabel.font =  .manrope(ofSize: 24, weight: .medium)
+        releasingDateLabel.adjustsFontSizeToFitWidth = true
+        releasingDateLabel.minimumScaleFactor = 0.5
 
         saveRealisingDateButton.setTitle("Save", for: .normal)
         saveRealisingDateButton.setTitleColor(UIColor.systemBlue, for: .normal)

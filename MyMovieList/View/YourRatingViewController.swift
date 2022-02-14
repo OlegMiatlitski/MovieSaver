@@ -69,6 +69,8 @@ final class YourRatingViewController: UIViewController, UIPickerViewDelegate {
         yourRatingLabel.textAlignment = .center
         yourRatingLabel.text = "Your Rating"
         yourRatingLabel.font =  .manrope(ofSize: 24, weight: .medium)
+        yourRatingLabel.adjustsFontSizeToFitWidth = true
+        yourRatingLabel.minimumScaleFactor = 0.5
 
         saveRatingButton.setTitle("Save", for: .normal)
         saveRatingButton.setTitleColor(UIColor.systemBlue, for: .normal)

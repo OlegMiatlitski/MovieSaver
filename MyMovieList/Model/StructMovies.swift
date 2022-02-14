@@ -1,10 +1,15 @@
 import UIKit
 
-struct Movies {
+struct Movies: Codable {
     var movieName: String
     var movieRating: String
     var releaseDate: String
     var youtubeLink: String
-    var imageMovie: UIImage
     var description: String
+    var poster: Data {
+        didSet { _ = mainImage }
+    }
+    lazy var mainImage: UIImage = {
+        UIImage(data: poster)!
+    }()
 }
